@@ -31,6 +31,7 @@ Ikuti langkah-langkah berikut untuk menginstal dan menjalankan aplikasi:
    Jalankan Apache dan Mysql, buka phpmyadmin lalu create database kemudian import database
 4. **Sesuaikan file koneksi.php:**
   seting kembali koneksi sesuai dengan nama database yang telah anda buat seperti dibawah ini
+ 
   ```bash
   host = 'localhost';
   $user = 'root';
