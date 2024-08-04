@@ -22,7 +22,7 @@ Ikuti langkah-langkah berikut untuk menginstal dan menjalankan aplikasi:
 1. **Clone Repositori:**
 
    ```bash
-   git clone [https://github.com/username/repository-name.git](https://github.com/fajar2302/servqualApp.git)
+   git clone https://github.com/fajar2302/servqualApp.git
    cd repository-name
 2. **Download Zip**
    pilih download zip
