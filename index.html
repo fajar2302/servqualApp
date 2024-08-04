@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <!-- <link rel="stylesheet" href="css/bootstrap-5.1.3-dist/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="library/bootstrap-icon.css" />
+  <link rel="stylesheet" href="css/style-home.css" />
+  <link rel="stylesheet" href="help/modal-admin.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- link Jquery 3.6.4 -->
+  <script src="library/jquery-3.6.4.min.js"></script>
+
+  <!-- link icon bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+
+  <!-- link Sweet Allert -->
+  <script src="library/sweetAllert2.min.js"></script>
+
+  <title>Servqual App</title>
+  <style>
+    #user .btn {
+      background-color: #0c3c53 !important;
+      color: white;
+    }
+
+    #user .btn:hover {
+      background-color: #0c3c53 !important;
+      color: white;
+    }
+
+    .bg-custom {
+      background-color: #0c3c53 !important;
+    }
+
+    /* help style */
+    .float-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background-color 0.3s;
+    }
+
+    .float-btn .plus {
+      display: none;
+    }
+
+    .menuhelp {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      color: #fff;
+      border: none;
+      border-radius: 5%;
+      cursor: pointer;
+      opacity: 1;
+      transition: display 1s ease-in-out;
+    }
+
+    .menu-header {
+      background-color: #205e88;
+    }
+
+    /* card help */
+
+    .popupheader {
+      background-color: #205e88;
+      color: white;
+    }
+
+
+
+    /*  */
+  </style>
+</head>
+
+<body>
+  <!-- =========== HEADER ============ -->
+  <header id="header">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: #0c3c53 !important">
+      <div class="container">
+        <a class="navbar-brand" href="#">Servqual App.</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse mx-auto" id="navbarNavAltMarkup">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link" href="#description">Description</a>
+            <a class="nav-link" href="login/login.html">Login</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============ MAIN ============ -->
+  <main id="main-page">
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="container my-5">
+        <h4 class="text text-center pb-4">PENGUKURAN KUALITAS LAYANAN</h4>
+        <p class="text pt-4 mt-4 text-center">"Pengalaman Unggul dengan ServQual: Kualitas Layanan yang Terukur dan
+          Ditingkatkan!"</p>
+      </div>
+      <div class="d-grid col-2 mx-auto text button">
+        <button id="btn-kuis" type="button" class="btn btn-primary btn-lg ">Lihat Kuesioner</button>
+      </div>
+    </section>
+
+    <!-- =========== FEATURES =========== -->
+    <section data-aos="fade-up" class="mt-5 mb-3 pt-4 pb-2 features" id="Description">
+      <div class="pt-2 features-body">
+        <div class="section-title">
+          <h4 class="fw-bold text-uppercase text-center">Description</h4>
+        </div>
+        <div class="row mt-4 pt-3 justify-content-center">
+          <div class="col-sm-7 column col-md-7 col-lg-7 col-xl-5 text-center">
+            <img src="assets/picture/features.png" alt="" width="400" height="300" />
+          </div>
+          <div class="col-sm-7 column col-md-7 col-lg-7 col-xl-7">
+            <p class="fs-5 py-4 my-3" style="text-align: justify;">
+              Fitur yang disediakan oleh aplikasi pengukuran kualitas layanan menggunakan ServQual memungkinkan peneliti
+              melihat hasil pengolahan data secara visual melalui grafik dan data yang menggunakan metode ServQual.
+              Dengan fitur
+              ini, proses evaluasi kualitas layanan menjadi lebih mudah dipahami dan memberikan wawasan yang lebih
+              mendalam bagi pengguna aplikasi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section data-aos="fade-up" class="about" id="about">
+      <div class="about-body">
+        <div class="row my-4 py-2 justify-content-center">
+          <div class="col-sm-7 col-md-8 col-lg-7 col-xl-7">
+            <p class="py-3 fs-5" style="text-align: justify;">
+              Aplikasi ini bertujuan memberikan bantuan kepada para peneliti dalam mengolah data kuesioner dengan
+              menggunakan metode Service Quality. Dengan aplikasi ini, proses pengolahan data menjadi lebih efisien dan
+              hasilnya dapat
+              segera dipantau dan dievaluasi. Ini dapat meningkatkan efektivitas penelitian dan membantu para peneliti
+              dalam mengambil keputusan berdasarkan analisis data yang akurat dan cepat.
+            </p>
+          </div>
+          <div class="col-sm-7 col-md-8 col-lg-7 col-xl-5 text-center">
+            <img src="assets/picture/about.png" alt="" width="400" height="300" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- HELP MENU -->
+  <button class="float-btn" id="floatBtn">
+    <span class="icon"><i class="bi bi-chat-left-text"></i></span>
+  </button>
+
+  <div class="card menuhelp" id="menuhelp" style="width: 18rem;">
+    <div class="card-header menu-header">
+      Help
+    </div>
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action" id="userGuideUser" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">User Guide User</a>
+    </div>
+  </div>
+  <!-- Modal -->
+
+  <div class="modal modal-xl fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header" id="popupheader">
+          <h1 class="modal-title fs-5" id="modalTitle"></h1>
+        </div>
+        <div class="modal-body" id="bdModal" style="background-color: #eee8e8;">
+          <div class="row" id="baground">
+            <!-- load modal -->
+          </div>
+        </div>
+        <div class="modal-footer" style="background-color: #eee8e8;">
+          <button type="button" class="btn bg-custom text-light" data-bs-dismiss="modal">Mengerti!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- END HELP MENU -->
+
+  <footer></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#btn-kuis').on('click', function (e) {
+        e.preventDefault();
+        window.location.href = 'login/login.html';
+      });
+      $('.float-btn').on('click', function () {
+        console.log("ditekan");
+        $('.card').toggle().css('opacity', '1');
+      })
+      $('#userGuideAdmin').on('click', function (e) {
+        e.preventDefault();
+        $('#modalShow').modal('show');
+        $('#modalTitle').html('User Guide Admin');
+        // $('#bdModal').text('Loading....');
+        $('#bdModal').load('help/modal-admin.html');
+        $('#popupheader').removeClass();
+        $('#popupheader').addClass('modal-header bg-custom text-white');
+
+      })
+      $('#userGuideUser').on('click', function (e) {
+        e.preventDefault();
+        $('#modalShow').modal('show');
+        $('#modalTitle').html('User Guide User');
+        // $('#bdModal').text('Loading....');
+        $('#bdModal').load('help/modal-user.html');
+        $('#popupheader').removeClass();
+        $('#popupheader').addClass('modal-header bg-custom text-white');
+
+      })
+    });
+    AOS.init();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="card shadow-lg border-0 rounded-lg my-5">
+                <div class="card-header">
+                    <h3 class="text-center font-weight-light my-4">Create Account</h3>
+                </div>
+                <div class="card-body">
+                    <form id="form-data">
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="inputNama" type="text" name="nama"
+                                placeholder="Masukkan Nama Lengkap" />
+                            <label for="inputNama">Nama Lengkap</label>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control" name="umur" id="inputAge" type="number"
+                                        placeholder="Contoh: 23" />
+                                    <label for="inputAge">Umur</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-select py-3" aria-label="Default select example"
+                                    name="jenis_kelamin">
+                                    <option value="">- Jenis Kelamin -</option>
+                                    <option value="laki-laki">Laki-Laki</option>
+                                    <option value="perempuan">Perempuan</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="inputAddress" name="alamat" type="text"
+                                placeholder="Jl. Durian....." />
+                            <label for="inputAddress">Alamat</label>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control" id="inputPhoneNumber" name="no_hp" type="number"
+                                        placeholder="Enter Phone Number" />
+                                    <label for="inputPhoneNumber">Nomor Telepon/WA</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating mb-3 mb-md-0">
+                                    <input class="form-control" id="inputJob" name="pekerjaan" type="text"
+                                        placeholder="Enter your job" />
+                                    <label for="inputJob">Pekerjaan</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="inputUsername" name="fusername" type="text"
+                                placeholder="Enter your username/email" />
+                            <label for="inputUsername">Username</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control" id="inputPassword" name="password" type="password"
+                                placeholder="Enter your password" />
+                            <label for="inputPassword">Password</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" id="showPassword" type="checkbox" value="" />
+                            <label class="form-check-label" for="showPassword">Show
+                                Password</label><br>
+                            <label id="length" class="invalid" style="font-size: 13px;">*Minimal 8 karakter</label><br>
+                            <label id="combination" class="invalid" style="font-size: 13px;">*Gabungan huruf besar,
+                                huruf kecil, angka, dan
+                                karakter khusus</label>
+                        </div>
+                        <div class=" mt-4 mb-0">
+                            <div class="d-grid"><button class="btn btn-primary btn-block" type="submit">Create
+                                    Account</button></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer text-center py-3">
+                    <div class="small"><a href="login.html">Have an account? Go to login</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+
+
+<script>
+    $(document).ready(function () {
+        $('#inputPassword').keyup(function () {
+            // Mengecek kriteria panjang sandi
+            let password = $(this).val();
+            if (password.length < 8) {
+                $('#length').removeClass('valid').addClass('invalid');
+            } else {
+                $('#length').removeClass('invalid').addClass('valid');
+            }
+
+            // Mengecek kriteria kombinasi karakter
+            if (password.match(/[a-z]/) && password.match(/[A-Z]/) && password.match(/[0-9]/) && password
+                .match(/[^a-zA-Z0-9]/)) {
+                $('#combination').removeClass('invalid').addClass('valid');
+            } else {
+                $('#combination').removeClass('valid').addClass('invalid');
+            }
+        });
+
+
+
+        // fungsi Show Password
+
+        // aksi untuk menampilkan password
+        $('#showPassword').on('click', function (e) {
+            e.preventDefault();
+            let passwordField = $('#inputPassword');
+            let passwordFieldType = passwordField.attr('type');
+            if (passwordFieldType == 'password') {
+                passwordField.attr('type', 'text');
+                $(this).text('Sembunyikan Password');
+
+            } else {
+                passwordField.attr('type', 'password');
+                $(this).text('Tampilkan Password');
+            }
+        })
+
+
+        // aksi ketika tombol Daftar ditekan
+        $('#form-data').submit(function (e) {
+            // alert(data);
+            e.preventDefault();
+            let isFormValid = true;
+
+            // Iterasi melalui semua elemen dengan kelas 'form-control'
+            $(".form-control").each(function () {
+                // Periksa apakah nilai elemen kosong atau tidak
+                if ($(this).val() === "") {
+                    isFormValid = false;
+                    return false; // Keluar dari loop each jika ada satu elemen yang kosong
+                }
+            });
+
+            if (!isFormValid) {
+                Swal.fire({
+                    position: 'top',
+                    icon: 'error',
+                    title: 'Harap Lengkapi Form Sebelum Mengirim!',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            } else {
+                let data = $(this).serialize();
+                $.post('proses.php', 'daftar&' + data, function (respon) {
+                    let pisah = respon.split("|");
+                    Swal.fire({
+                        position: 'top',
+                        icon: pisah[0],
+                        title: pisah[1],
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    window.location.href = 'login.html';
+                })
+            }
+
+        })
+
+
+
+    });
+</script>

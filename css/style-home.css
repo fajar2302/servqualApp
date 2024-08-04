@@ -1,0 +1,131 @@
+* {
+  padding: 0;
+  margin: 0;
+  /* color: white !important; */
+}
+
+#hero {
+  position: relative;
+  color: white;
+  padding: 70px 0;
+  height: 65vh;
+  background-image: url('../assets/picture/hero-image.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  z-index: 0;
+}
+#hero::before {
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0c3c53;
+  opacity: 70%;
+  z-index: 1;
+}
+#hero .text {
+  position: relative;
+  color: white !important;
+  z-index: 2;
+}
+#hero .btn {
+  background-color: transparent;
+  border: 2px solid #0c3c53 !important;
+}
+#hero .btn:hover {
+  background-color: #0c3c53;
+  border: none;
+}
+
+.section-title {
+  color: #0c3c53;
+}
+
+/* features */
+.features-body {
+  padding-left: 90px;
+  padding-right: 90px;
+}
+/* about */
+.about-body {
+  padding-left: 90px;
+  padding-right: 90px;
+}
+@media screen and (max-width: 992px) {
+}
+@media screen and (max-width: 768px) {
+  .features-body {
+    padding-top: 5px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .features .features-body .row img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .features .features-body .row p {
+    font-size: 15px !important;
+  }
+  .about-body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .about .about-body .row img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .about .about-body .row p {
+    font-size: 15px !important;
+  }
+
+  /* table */
+  .card-kuesioner {
+    width: 700px;
+    border: 2px solid;
+    padding: 2px;
+  }
+
+  /* table awal */
+  .card-olah {
+    width: 600px;
+  }
+
+  .kuesioner-title {
+    width: 700px;
+  }
+  #kuesioner hr {
+    width: 700px;
+  }
+  #kuesioner {
+  }
+}
+@media screen and (max-width: 576px) {
+  .features-body {
+    padding: 30px;
+  }
+  .features .features-body .row img {
+    width: 100%;
+  }
+  .features .features-body .row p {
+    font-size: 24px;
+  }
+  .about-body {
+    padding: 30px;
+  }
+  .about .about-body .row img {
+    width: 100%;
+  }
+  .about .features-body .row p {
+    font-size: 24px;
+  }
+
+  /* hero */
+  .hero .button {
+    width: 75%;
+  }
+}
